@@ -22,7 +22,7 @@ namespace JustBlog.Core.Mappings
                 .Length(50)
                 .Not.Nullable();
 
-            Map(x => x.Desciption)
+            Map(x => x.Description)
                 .Length(200);
 
             HasManyToMany(x => x.Posts)

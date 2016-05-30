@@ -14,7 +14,7 @@ namespace JustBlog.Core.Objects
 
         public virtual string UrlSlug { get; set; }
 
-        public virtual string Desciption { get; set; }
+        public virtual string Description { get; set; }
 
         public virtual IList<Post> Posts { get; set; }
     }

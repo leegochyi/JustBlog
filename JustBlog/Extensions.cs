@@ -9,8 +9,8 @@ namespace JustBlog
     {
         public static string ToConfigLocalTime(this DateTime utcDT)
         {
-            var twTZ = TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["Timezone"]);
-            return String.Format("{0} ({1})", TimeZoneInfo.ConvertTimeFromUtc(utcDT, twTZ).ToShortDateString(), ConfigurationManager.AppSettings["TimezoneAbbr"]);
+            var tzi = TimeZoneInfo.FindSystemTimeZoneById("Taipei Standard Time");
+            return String.Format("{0} ({1})", TimeZoneInfo.ConvertTimeFromUtc(utcDT, tzi).ToShortDateString(), ConfigurationManager.AppSettings["TimezoneAbbr"]);
         }
     }
 }
