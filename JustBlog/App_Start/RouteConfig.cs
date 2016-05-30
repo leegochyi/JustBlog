@@ -18,6 +18,18 @@ namespace JustBlog
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Blog", action = "Posts", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               "Category",
+               "Category/{category}",
+                new { controller = "Blog", action = "Category" }
+                );
+
+            routes.MapRoute(
+                "Tag",
+                "Tag/{tag}",
+                new { controller = "Blog", action = "Tag" }
+                );
         }
     }
 }
