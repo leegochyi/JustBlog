@@ -104,7 +104,7 @@ namespace JustBlog.Core
                 .Count();
         }
 
-        public int TotlaPostForTag(string tagSlug)
+        public int TotalPostsForTag(string tagSlug)
         {
             return _session.Query<Post>()
                 .Where(p => p.Published && p.Tags.Any(t => t.UrlSlug.Equals(tagSlug)))
