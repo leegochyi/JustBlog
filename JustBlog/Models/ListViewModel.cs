@@ -32,6 +32,11 @@ namespace JustBlog.Models
         {
             switch (type)
             {
+                case "Category":
+                    Posts = blogRepository.PostsForCategory(text, p - 1, 10);
+                    TotalPosts = blogRepository.TotalPostsForCategory(text);
+                    Category = blogRepository.Category(text);
+                    break;
                 case "Tag":
                     Posts = blogRepository.PostsForTag(text, p - 1, 10);
                     TotalPosts = blogRepository.TotalPostsForTag(text);
@@ -57,6 +62,8 @@ namespace JustBlog.Models
 
 
         public Tag Tag { get; private set; }
+
+        public string Search { get; private set; }
     }
 
 
