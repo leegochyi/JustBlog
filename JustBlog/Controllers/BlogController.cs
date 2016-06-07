@@ -62,6 +62,7 @@ namespace JustBlog.Controllers
             if (viewModel.Tag == null)
                 throw new HttpException(404, "Tag not found 無法找到指定Tag");
 
+            //@ at符號用來 忽略跳脫字元 及 換行可正常執行程式
             ViewBag.Title = String.Format(@"Latest posts tagged on  ""{0}""", viewModel.Tag.Name);
 
             return View("List", viewModel);
