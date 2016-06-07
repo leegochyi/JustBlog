@@ -90,7 +90,24 @@ namespace JustBlog.Core
                 .ToList();
         }
 
+        public IList<Post> PostsForSearch(string search, int pageNo, int pageSize)
+        {
+            var posts = _session.Query<Post>()
+                .Where(p => p.Published && (p.Title.Contains(search) || p.Category.Name.Equals(search) || p.Tags.Any(t => t.Name.Equals(search))))
+                .OrderByDescending(p => p.PostedOn)
+                .Skip(pageNo * pageSize)
+                .Take(pageSize)
+                .Fetch(p => p.Category)
+                .ToList();
 
+            var postIds = posts.Select(p => p.Id).ToList();
+
+            return _session.Query<Post>()
+                .Where(p => postIds.Contains(p.Id))
+                .OrderByDescending(p => p.PostedOn)
+                .FetchMany(p => p.Tags)
+                .ToList();
+        }
 
         public int TotalPosts()
         {
@@ -111,6 +128,12 @@ namespace JustBlog.Core
                 .Count();
         }
 
+        public int TotalPostsForSearch(string search)
+        {
+            return _session.Query<Post>()
+                .Where(p => p.Published && (p.Title.Contains(search) || p.Category.Name.Equals(search) || p.Tags.Any(t => t.Name.Equals(search))))
+                .Count();
+        }
 
 
         public Category Category(string categorySlug)

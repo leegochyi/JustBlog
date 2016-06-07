@@ -41,6 +41,15 @@ namespace JustBlog.Core
         IList<Post> PostsForTag(string tagSlug, int pageNo, int pageSize);
 
         /// <summary>
+        /// Fetch the posts that matches the search text
+        /// </summary>
+        /// <param name="search"></param>
+        /// <param name="pageNo"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        IList<Post> PostsForSearch(string search, int pageNo, int pageSize);
+
+        /// <summary>
         /// Return total no. of posts belongs to a particular category.
         /// 回傳posts 所屬指定category總和頁數
         /// </summary>
@@ -55,6 +64,13 @@ namespace JustBlog.Core
         /// <param name="tagSlug"></param>
         /// <returns></returns>
         int TotalPostsForTag(string tagSlug);
+
+        /// <summary>
+        /// Display the total number of posts matches the search text for pagination
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        int TotalPostsForSearch(string search);
 
         /// <summary>
         /// Retrun category based on url slug
