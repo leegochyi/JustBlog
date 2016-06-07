@@ -49,6 +49,7 @@ namespace JustBlog.Core
         /// <returns></returns>
         IList<Post> PostsForSearch(string search, int pageNo, int pageSize);
 
+        IList<Category> Categories();
         /// <summary>
         /// Return total no. of posts belongs to a particular category.
         /// 回傳posts 所屬指定category總和頁數
