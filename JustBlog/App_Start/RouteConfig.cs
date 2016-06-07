@@ -13,6 +13,21 @@ namespace JustBlog
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            //routes.MapRoute(
+            //    "Post",
+            //    "Archive/Post/{year}-{month}-{day}",
+            //    new { controller = "Blog", action = "Post" },
+            //    new { year = @"\d{4}", month = @"\d{2}", day = @"\d{2}" }
+            //);
+
+            routes.MapRoute(
+                "Post",
+                "Archive/{year}/{month}/{title}",
+                new { controller = "Blog", action = "Post" }
+                );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
