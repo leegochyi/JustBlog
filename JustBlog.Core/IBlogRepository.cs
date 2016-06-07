@@ -73,6 +73,15 @@ namespace JustBlog.Core
         int TotalPostsForSearch(string search);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="titleSlug"></param>
+        /// <returns></returns>
+        Post Post(int year, int month, string titleSlug);
+
+        /// <summary>
         /// Retrun category based on url slug
         /// 回傳基礎category到網址區塊
         /// </summary>
