@@ -22,6 +22,7 @@ namespace JustBlog.Controllers
             _blogRepository = blogRepository;
         }
 
+
         public ViewResult Posts(int p = 1)
         {
             //pick latest 10 posts
@@ -38,6 +39,19 @@ namespace JustBlog.Controllers
             ViewBag.Title = "Lastest Posts";
             return View("List", viewModel);
 
+        }
+
+        public ViewResult Post(int year, int month, string title)
+        {
+            var post = _blogRepository.Post(year, month, title);
+
+            if (post == null)
+                throw new HttpException(404, "Post not found");
+
+            if (post.Published == false && User.Identity.IsAuthenticated == false)
+                throw new HttpException(401, "The post is not published");
+
+            return View(post);
         }
 
         public ViewResult Category(string category, int p =1 )
