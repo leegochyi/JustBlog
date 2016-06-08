@@ -92,5 +92,13 @@ namespace JustBlog.Controllers
 
         }
 
+
+        [ChildActionOnly]
+        public PartialViewResult Siderbars()
+        {
+            var widgetViewModel = new WidgetViewModel(_blogRepository);
+
+            return PartialView("_Siderbars", widgetViewModel);
+        }
     }
 }
