@@ -98,7 +98,7 @@ namespace JustBlog.Controllers
         {
             var widgetViewModel = new WidgetViewModel(_blogRepository);
 
-            return PartialView("_Siderbars", widgetViewModel);
+            return PartialView("_Sidebars", widgetViewModel);
         }
     }
 }
