@@ -94,7 +94,7 @@ namespace JustBlog.Controllers
 
 
         [ChildActionOnly]
-        public PartialViewResult Siderbars()
+        public PartialViewResult Sidebars()
         {
             var widgetViewModel = new WidgetViewModel(_blogRepository);
 
