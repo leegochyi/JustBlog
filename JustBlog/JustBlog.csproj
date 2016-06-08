@@ -788,6 +788,7 @@
   <ItemGroup>
     <Compile Include="ActionLinkExtensions.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -824,6 +825,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JustBlog.Core\JustBlog.Core.csproj">

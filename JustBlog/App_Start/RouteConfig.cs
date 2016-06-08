@@ -28,11 +28,11 @@ namespace JustBlog
                 );
 
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Blog", action = "Posts", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Blog", action = "Posts", id = UrlParameter.Optional }
+            //);
 
             routes.MapRoute(
                "Category",
@@ -44,6 +44,19 @@ namespace JustBlog
                 "Tag",
                 "Tag/{tag}",
                 new { controller = "Blog", action = "Tag" }
+                );
+
+            routes.MapRoute(
+                "Login",
+                "Login",
+                new { controller = "Admin", action = "Login" }
+                );
+
+            //default route
+            routes.MapRoute(
+                "Action",
+                "{action}",
+                new { controller = "Blog", action = "Posts" }
                 );
         }
     }
