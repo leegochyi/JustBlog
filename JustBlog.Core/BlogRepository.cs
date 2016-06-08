@@ -116,6 +116,13 @@ namespace JustBlog.Core
                 .ToList();
         }
 
+        public IList<Tag> Tags()
+        {
+            return _session.Query<Tag>()
+                .OrderBy(p => p.Name)
+                .ToList();
+        }
+
         public int TotalPosts()
         {
             return _session.Query<Post>().Where(p => p.Published).Count();
