@@ -795,6 +795,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ListViewModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\WidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -816,6 +817,7 @@
     <Content Include="Views\Shared\_Categories.cshtml" />
     <Content Include="Views\Shared\_Tags.cshtml" />
     <Content Include="Views\Shared\_LatestPosts.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -825,7 +827,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JustBlog.Core\JustBlog.Core.csproj">
